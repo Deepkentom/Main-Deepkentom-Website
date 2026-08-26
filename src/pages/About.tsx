@@ -294,7 +294,7 @@ const About = () => {
                       />
                     </div>
                     <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-                      {index === 0 ? 'Lead' : 'Developer'}
+                      {index === 0 || index === 1 ? 'Lead' : 'Developer'}
                     </div>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
