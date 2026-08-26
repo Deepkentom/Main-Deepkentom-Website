@@ -1,5 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { ArrowRight, Code2, Users, Zap, Shield, Globe, Sparkles, Play, ChevronRight, Star, CheckCircle, Target, Rocket, Server, Cpu, Database, Cloud, GitBranch, MessageCircle, BarChart3 } from "lucide-react";
+import {
+  Sprout,
+  Satellite,
+  Bug,
+  Droplets,
+  LineChart,
+  Tractor,
+  Microscope,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import ParticleField from "@/components/ParticleField";
@@ -17,10 +26,12 @@ const TypingAnimation = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   
-  const words = ['Digital Future', 'Online Presence', 'Innovation', 'Business Growth', 'Technology Stack'];
+  const words = ['Every Harvest', 'Every Field', 'Every Farmer', 'Every Season'];
   const typingSpeed = 100;
   const deletingSpeed = 50;
   const pauseTime = 2000;
+
+  const ctaImage = "https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=2000";
 
   useEffect(() => {
     const handleTyping = () => {
@@ -118,26 +129,83 @@ const processSteps = [
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "CTO at TechNova",
-    content: "Deepkentom transformed our legacy systems into modern, scalable solutions. Their team's expertise and dedication were exceptional throughout the project.",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=200&h=200",
-    rating: 5
+    name: "Dr. Amina Wanjiru",
+    role: "Agricultural Research Partner",
+    content:
+      "The platform gives our teams a much clearer view of crop health and helps us identify potential problems before they become major field challenges.",
+    rating: 5,
   },
   {
-    name: "Michael Chen",
-    role: "Product Director at Finova",
-    content: "The performance optimization work done by Deepkentom resulted in 40% faster load times and significantly improved user experience for our customers.",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=200&h=200",
-    rating: 5
+    name: "James Mwangi",
+    role: "Farm Operations Manager",
+    content:
+      "Having field data, satellite insights and crop monitoring in one system has made it much easier for our team to make timely decisions.",
+    rating: 5,
   },
   {
-    name: "Elena Rodriguez",
-    role: "CEO at HealthTech Solutions",
-    content: "Their security assessment uncovered critical vulnerabilities we weren't aware of. The implementation was thorough and minimally disruptive to our operations.",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=200&h=200",
-    rating: 5
-  }
+    name: "Grace Njeri",
+    role: "Agribusiness Programme Lead",
+    content:
+      "The technology is practical, accessible and designed around the realities of agriculture. It bridges the gap between data and decisions.",
+    rating: 5,
+  },
+];
+
+const solutions = [
+  {
+    icon: Microscope,
+    title: "AI Crop Disease Detection",
+    description:
+      "Computer-vision solutions analyze crop images to identify diseases, nutrient deficiencies and visible plant stress, helping farmers respond earlier.",
+    image:
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&q=80&w=1200",
+    gradient: "from-blue-500/20 to-cyan-500/20",
+  },
+  {
+    icon: Satellite,
+    title: "Satellite Farm Monitoring",
+    description:
+      "We use satellite imagery and geospatial intelligence to monitor vegetation, crop performance, field conditions and changes across large agricultural areas.",
+    image:
+      "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1200",
+    gradient: "from-blue-500/20 to-indigo-500/20",
+  },
+  {
+    icon: Droplets,
+    title: "Precision Agriculture",
+    description:
+      "AI and sensor-driven systems help optimize irrigation, fertilizer and other farm inputs by understanding what each part of a field needs.",
+    image:
+      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1200",
+    gradient: "from-cyan-500/20 to-blue-500/20",
+  },
+  {
+    icon: Bug,
+    title: "Pest & Risk Prediction",
+    description:
+      "Predictive models combine environmental and agricultural data to identify potential pest outbreaks and emerging crop risks.",
+    image:
+      "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&q=80&w=1200",
+    gradient: "from-blue-500/20 to-purple-500/20",
+  },
+  {
+    icon: Tractor,
+    title: "Smart Farm Automation",
+    description:
+      "We integrate AI with IoT and edge devices to enable intelligent monitoring, automation and data-driven farm operations.",
+    image:
+      "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=1200",
+    gradient: "from-indigo-500/20 to-blue-500/20",
+  },
+  {
+    icon: LineChart,
+    title: "Agricultural Intelligence",
+    description:
+      "Dashboards, analytics and predictive systems transform farm and market data into insights for farmers, agribusinesses and decision-makers.",
+    image:
+      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1200",
+    gradient: "from-blue-500/20 to-cyan-500/20",
+  },
 ];
 
 const Home = () => {
@@ -165,7 +233,7 @@ const Home = () => {
           style={{ backgroundImage: `url(${heroImage})` }}
         >
           {/* Blue overlay gradient */}
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-700/40 to-blue-500/10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-700/40 to-blue-500/10"></div>
         </div>
 
         {/* Particle field with bluish particles */}
@@ -176,14 +244,14 @@ const Home = () => {
             <AnimatedSection delay={100}>
               <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-sm font-medium mb-6">
                 <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
-                Next-Generation Technology Solutions
+                AI-Powered Software for Agriculture
               </span>
             </AnimatedSection>
             
             <AnimatedSection delay={200}>
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="bg-white/80 bg-clip-text text-transparent">
-                  Transform Your
+                  Intelligence for
                 </span>
                 <br />
                 <TypingAnimation />
@@ -191,12 +259,12 @@ const Home = () => {
             </AnimatedSection>
             
             <AnimatedSection delay={300}>
-              <p className="text-lg text-slate-200 max-w-3xl leading-relaxed md:hidden">
-                Innovative software solutions — from custom apps to AI systems.
-              </p>
+
               <p className="hidden md:block text-xl md:text-2xl text-slate-200 max-w-3xl leading-relaxed">
-                We craft innovative software solutions that propel businesses into the future. 
-                From custom applications to AI-powered systems, we turn your vision into reality.
+                We build AI-powered software solutions that turn agricultural
+                data into intelligent decisions, helping farmers and
+                agribusinesses improve productivity, reduce waste and manage
+                resources more efficiently.
               </p>
 
             </AnimatedSection>
@@ -226,17 +294,93 @@ const Home = () => {
        {/* Services Overview */}
       <section className="py-24 bg-gradient-to-b from-white to-slate-100/50">
         <div className="container mx-auto px-6">
+
+          <section className=" bg-gradient-to-b from-white to-slate-100/50">
+
+        <div className="container mx-auto px-6">
+
           <AnimatedSection className="max-w-3xl mb-16">
+
             <span className="inline-block px-4 py-2 rounded-full bg-blue-100 text-blue-700 text-sm font-medium mb-4">
-              Our Expertise
+              Our Solutions
             </span>
+
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-800">
-              Comprehensive <span className="text-blue-600">Tech Solutions</span>
+
+              Software that makes{" "}
+
+              <span className="text-blue-600">
+                agriculture smarter
+              </span>
+
             </h2>
-            <p className="text-xl text-slate-600">
-              From concept to deployment, we deliver end-to-end solutions that drive innovation and growth
+
+            <p className="text-xl text-slate-600 leading-relaxed">
+              We combine artificial intelligence, software engineering,
+              geospatial technology and IoT to solve real agricultural
+              challenges.
             </p>
+
           </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            {solutions.map((solution, index) => (
+
+              <AnimatedSection
+                key={solution.title}
+                delay={index * 100}
+                className="group relative bg-white backdrop-blur-sm rounded-2xl overflow-hidden border border-slate-200 hover:shadow-lg hover:border-blue-300 transition-all duration-500"
+              >
+
+                <div className="relative h-48 overflow-hidden">
+
+                  <img
+                    src={solution.image}
+                    alt={solution.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+
+                  <div
+                    className={`absolute inset-0 bg-gradient-to-br ${solution.gradient} group-hover:opacity-80 transition-opacity duration-300`}
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
+
+                  <div className="absolute bottom-4 left-4">
+
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl flex items-center justify-center shadow-lg">
+
+                      <solution.icon className="w-6 h-6 text-white" />
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div className="p-6">
+
+                  <h3 className="text-xl font-semibold mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                    {solution.title}
+                  </h3>
+
+                  <p className="text-slate-600 leading-relaxed">
+                    {solution.description}
+                  </p>
+
+                </div>
+
+              </AnimatedSection>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -260,28 +404,7 @@ const Home = () => {
                 description: "Intelligent systems that learn, adapt, and provide predictive insights for your business.",
                 image: mobileApps,
                 gradient: "from-indigo-500/20 to-blue-500/20"
-              },
-              {
-                icon: Shield,
-                title: "Cybersecurity",
-                description: "Comprehensive security solutions to protect your digital assets and user data.",
-                image: ecommerce,
-                gradient: "from-green-500/20 to-teal-500/20"
-              },
-              {
-                icon: Users,
-                title: "Digital Transformation",
-                description: "Strategic consulting to modernize your business processes and technology stack.",
-                image: customSoftware,
-                gradient: "from-purple-500/20 to-indigo-500/20"
-              },
-              {
-                icon: Sparkles,
-                title: "Innovation Lab",
-                description: "Experimental technologies and proof-of-concept development for future solutions.",
-                image: mobileApps,
-                gradient: "from-pink-500/20 to-rose-500/20"
-              },
+              }
             ].map((service, index) => (
               <AnimatedSection 
                 key={index} 
@@ -526,49 +649,78 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Call to Action */}
-      <section className="py-24 bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600/90 via-cyan-500/90 to-blue-700/90"></div>
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl space-y-8">
-            <AnimatedSection delay={100}>
-              <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-medium">
-                <Star className="w-4 h-4 mr-2 fill-current" />
-                Ready to Transform Your Business?
-              </span>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={200}>
-              <h2 className="text-4xl md:text-6xl font-bold leading-tight">
-                Let's Build Something
-                <span className="block bg-gradient-to-r from-white to-cyan-200 bg-clip-text text-transparent">Extraordinary Together</span>
-              </h2>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={300}>
-              <p className="text-xl md:text-2xl text-blue-100 max-w-3xl leading-relaxed">
-                Join hundreds of satisfied clients who have transformed their businesses with our innovative solutions. 
-                Your success story starts with a single conversation.
-              </p>
-            </AnimatedSection>
-            
-            <AnimatedSection delay={400} className="flex flex-col sm:flex-row gap-6 items-start">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-slate-100 px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-white/25 transition-all duration-300">
-                <span>Get Started Today</span>
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Button>
-              <Button size="lg" variant="outline" className="px-8 py-4 text-lg border-white/30 text-white hover:bg-white/10 transition-all duration-300">
-                <Play className="mr-2 w-5 h-5" />
-                <span>Schedule Demo</span>
-              </Button>
-            </AnimatedSection>
-          </div>
-        </div>
+       <section className="py-24 bg-gradient-to-r from-blue-700 via-blue-600 to-cyan-700 text-white relative overflow-hidden">
+
+        <div
         
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{
+            backgroundImage: `url(https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=2000)`,
+          }}
+        />
+
         {/* Floating particles */}
-        <div className="absolute top-1/4 left-10 w-4 h-4 bg-white/30 rounded-full animate-float"></div>
-        <div className="absolute top-1/3 right-20 w-6 h-6 bg-white/20 rounded-full animate-float" style={{ animationDelay: '2s', animationDuration: '15s' }}></div>
-        <div className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-white/40 rounded-full animate-float" style={{ animationDelay: '4s', animationDuration: '12s' }}></div>
+
+        <div className="absolute top-1/4 left-10 w-4 h-4 bg-white/30 rounded-full animate-float" />
+
+        <div
+          className="absolute top-1/3 right-20 w-6 h-6 bg-white/20 rounded-full animate-float"
+          style={{
+            animationDelay: "2s",
+            animationDuration: "15s",
+          }}
+        />
+
+        <div
+          className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-white/40 rounded-full animate-float"
+          style={{
+            animationDelay: "4s",
+            animationDuration: "12s",
+          }}
+        />
+
+        <div className="container mx-auto px-6 relative z-10">
+          <AnimatedSection className="max-w-4xl text-left">
+
+  <span className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 border border-white/20 text-blue-100 text-sm font-medium mb-6 backdrop-blur-sm">
+    Let's Build the Future of Agriculture
+  </span>
+
+  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+    Have an agricultural challenge?
+  </h2>
+
+  <p className="text-xl text-blue-100 leading-relaxed max-w-3xl mb-10">
+    From AI-powered crop monitoring to intelligent farm platforms,
+    we build software solutions that turn agricultural data into
+    meaningful action.
+  </p>
+
+  <div className="flex flex-col sm:flex-row gap-4 justify-start items-start">
+
+    <Button
+      size="lg"
+      className="bg-white text-blue-700 hover:bg-blue-50 px-8 py-4 text-lg group shadow-lg"
+    >
+      <span>Start a Project</span>
+
+      <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+    </Button>
+
+    <Button
+      size="lg"
+      variant="outline"
+      className="border-white/40 bg-white/5 text-white hover:bg-white/15 px-8 py-4 text-lg"
+    >
+      Talk to Our Team
+    </Button>
+
+  </div>
+
+</AnimatedSection>
+          
+        </div>
+
       </section>
     </div>
   );
