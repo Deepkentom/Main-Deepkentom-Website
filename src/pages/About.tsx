@@ -6,6 +6,8 @@ import teamImage from "@/assets/team-premium.jpg";
 import lenah from "@/assets/team/Lenah1.jpg";
 import amosImg from "@/assets/team/clinton.png";
 import nipher from "@/assets/team/girl.png";
+import ronald from "@/assets/team/ronald.png";
+import david from "@/assets/team/david.jpeg";
 
 
 const About = () => {
@@ -61,6 +63,39 @@ const About = () => {
   };
 
   const teamMembers = [
+    {
+    name: "Dr.Ronald Tombe",
+    role: "Founder & CEO",
+    bio: "Visionary entrepreneur with a passion for leveraging technology to solve real-world problems.",
+    image: ronald,
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "ronaldtombe@gmail.com"
+    }
+  },
+  {
+    name: "Lenah Barongo",
+    role: "Co-founder",
+    bio: "Dedicated to fostering innovation and driving the company's mission forward with strategic insights.",
+    image: lenah,
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "lenahbarong@gmail.com"
+    }
+  },
+    {
+    name: "David Onyango",
+    role: "Software Developer & co-founder",
+    bio: "Passionate about building scalable web applications and creating seamless user experiences.",
+    image: david,
+    social: {
+      linkedin: "#",
+      github: "#",
+      email: "#"
+    }
+  },
   {
     name: "Amos Clinton",
     role: "Lead Developer",
@@ -70,17 +105,6 @@ const About = () => {
       linkedin: "https://www.linkedin.com/in/amos-clinton-b65158222/",
       github: "https://github.com/Wanyangu1",
       email: "amosclinton196@gmail.com"
-    }
-  },
-  {
-    name: "Lenah Barongo",
-    role: "Software Developer",
-    bio: "Full-stack wizard specializing in React, Django, and cloud infrastructure.",
-    image: lenah,
-    social: {
-      linkedin: "#",
-      github: "#",
-      email: "lenahbarong@gmail.com"
     }
   },
   {
